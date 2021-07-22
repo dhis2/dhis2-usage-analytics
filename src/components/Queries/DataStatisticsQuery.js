@@ -58,7 +58,9 @@ const DataStatisticsQuery = ({
         }
     }, [startDate, endDate, interval, fields])
 
-    if (!called || loading || isIntervalStale) {
+    const initialLoading = loading && !data
+
+    if (!called || initialLoading || isIntervalStale) {
         return (
             <ComponentCover>
                 <CenteredContent>

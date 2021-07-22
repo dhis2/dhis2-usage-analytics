@@ -58,7 +58,9 @@ const TopFavoritesQuery = ({
         refetch({ eventType, pageSize, sortOrder, fields })
     }, [eventType, pageSize, sortOrder, fields])
 
-    if (!called || loading) {
+    const initialLoading = loading && !data
+
+    if (!called || initialLoading) {
         return (
             <ComponentCover>
                 <CenteredContent>
